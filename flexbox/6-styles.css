@@ -358,7 +358,6 @@ ul.row {
   padding: 0;
   list-style: none;
   text-align: center;
-  margin: var(--nav-item-margin);
 }
 
 .nav .nav-item {
@@ -367,7 +366,9 @@ ul.row {
   font-size: var(--nav-item-font-size);
   letter-spacing: var(--nav-item-letter-spacing);
 }
-
+.nav-item + .nav-item {
+  margin: var(--nav-item-margin);
+}
 .nav .nav-link {
   display: block;
   padding: 0.5rem 0;
