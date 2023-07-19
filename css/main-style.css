@@ -1,0 +1,186 @@
+/*************************** GLOBAL RULES ***************************/
+
+:root{
+    font-size: 16px;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1.2;
+}
+html,body{
+    width: 100vw;
+    min-height: 100vh;
+}
+h1,h2,h3,h4,h5,h6{
+    line-height: 1.5;
+}
+header,main,footer{
+    width: 100%;
+}
+.container{
+    width: 95%;
+    margin: 0 auto;
+}
+.button{
+    all: unset;
+    width: fit-content;
+    padding: 10px 20px;
+    border: 2px solid black;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+/*************************** HEADER ***************************/
+
+header>.container{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-logo{
+    width: fit-content;
+    height: fit-content;
+}
+header a{
+    width: fit-content;
+    height: fit-content;
+}
+a img{
+    width: 150px;
+    height: 60px;
+    border: 1px solid black;
+}
+nav{
+    width: fit-content;
+    height: fit-content;
+    padding-right: 10px;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+nav a{ padding-bottom: 10px;}
+
+/*************************** MAIN ***************************/
+
+section{
+    width: 100%;
+    height: fit-content;
+}
+.section-header{
+    min-height: 10vh;
+    display: grid;
+    place-items: center;
+}
+.section-body{
+    width: 100%;
+    height: fit-content;
+    padding: 20px 0
+}
+.section-title, .section-tagline{ text-align: center;}
+.section-title{
+    font-size: 2.3em;
+    font-weight: 600;
+}
+.section-tagline{
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.section-hero{
+    width: 100%;
+    min-height: 45vh;
+    display: flex;
+    align-items: center;
+    & h2{
+        text-align: left;
+        font-weight: 5em !important;
+    }
+    .section-body{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap:40px;
+    }
+}
+
+.section-services{
+    .section-body{
+        display: grid;
+        gap: 10px;
+        .row>*{
+            width: 100%;
+            padding: 15px 10px;
+        }
+    }
+}
+
+.section-works{
+    min-height: 50vh;
+    .section-body{
+        height: fit-content;
+        .row{ 
+            width: 100%;
+            align-items: center;
+            height: fit-content;
+            .card-work{
+                width: inherit;
+                min-height: 30vh;
+                border: 1px solid red;
+                overflow: hidden;
+                .card-outer{
+                    width: inherit;
+                    height: 100%;
+                    position: relative;
+                    .card-image{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                    .card-inner{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 2;
+                        display: grid;
+                        place-items: center;
+                        .card-title{/*CHECK ON THIS*/
+                            width: fit-content;
+                            height: fit-content;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
