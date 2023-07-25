@@ -8,12 +8,13 @@
     <!------------ CSS & JS ------------>
     <link rel="stylesheet" href="/css/main-style.css">
     <script src="/Js/functionality.js" defer></script>
+    <script src="https://kit.fontawesome.com/fce31c0942.js" crossorigin="anonymous"></script>
 
     <!------------ Tab Data ------------>
     <title>Homepage - Techium</title>
 </head>
 <body>
-    <header>
+    <header class="main">
         <div class="container">
             <div class="header-logo">
                 <a href="#">
@@ -51,7 +52,9 @@
                 <div class="section-body">
                     <div class="row">
                         <div class="card-services">
-                            <h3 class="card-title"><a href="#">Design & Concept</a></h3>
+                            <h3 class="card-title">
+                              <a href="#">Design & Concept</a>
+                            </h3>
                         </div>
                         <div class="card-services">
                             <h3 class="card-title"><a href="#">Digital Strategy</a></h3>
@@ -86,7 +89,7 @@
                         <article class="card-work">
                           <div class="card-outer">
                             <div class="card-image">
-                              <img src="images/1.png" alt="" />
+                              <img src="/Resources/1.png" alt="" />
                             </div>
                             <div class="card-inner">
                               <h3 class="card-title">
@@ -98,7 +101,7 @@
                         <article class="card-work">
                           <div class="card-outer">
                             <div class="card-image">
-                              <img src="images/1.png" alt="" />
+                              <img src="/Resources/2.png" alt="" />
                             </div>
                             <div class="card-inner">
                               <h3 class="card-title">
@@ -110,7 +113,7 @@
                         <article class="card-work">
                           <div class="card-outer">
                             <div class="card-image">
-                              <img src="images/1.png" alt="" />
+                              <img src="/Resources/3.png" alt="" />
                             </div>
                             <div class="card-inner">
                               <h3 class="card-title">
@@ -131,10 +134,10 @@
                 </header>
                 <div class="section-body">
                     <div class="row">
-                        <div>
-                            <img src="#" alt="">
+                        <div class="img-box">
+                            <img src="/Resources/4.png" alt="">
                         </div>
-                        <div>
+                        <div class="content">
                             <span>
                                 <h3>Who are we</h3>
                                 <p>
@@ -170,7 +173,7 @@
                 <div class="row">
                     <article class="card-blog">
                       <div>
-                        <img src="images/5.png" alt="" width="305" height="305" />
+                        <img src="/Resources/5.png" alt="" width="305" height="305" />
                       </div>
                       <p class="card-category">Career</p>
                       <h3>
@@ -185,7 +188,7 @@
                     </article>
                     <article class="card-blog">
                       <div>
-                        <img src="images/5.png" alt="" width="305" height="305" />
+                        <img src="/Resources/6.png" alt="" width="305" height="305" />
                       </div>
                       <p class="card-category">Digital Life</p>
                       <h3>
@@ -200,7 +203,7 @@
                     </article>
                     <article class="card-blog">
                       <div>
-                        <img src="images/5.png" alt="" width="305" height="305" />
+                        <img src="/Resources/7.png" alt="" width="305" height="305" />
                       </div>
                       <p class="card-category">Social</p>
                       <h3>
@@ -226,47 +229,47 @@
                 <div class="row">
                     <article class="card-testimonial">
                         <img
-                        src="images/8.png"
+                        src="/Resources/8.png"
                         alt="Yuri Y. avatar"
-                        width="100"
-                        height="100"
+                        width="120"
+                        height="120"
                         class="card-avatar"
                         />
                         <blockquote class="card-quote">
-                            <p>
+                          <p>
                             I am completely blown away. Thanks to Techium, we've just launched our 5th website!
-                            <cite>Yuri Y.</cite>
-                        </p>
-                            </blockquote>
-                    </article>
-                    <article class="card-testimonial">
-                        <img
-                        src="images/9.png"
-                        alt="Dorrie S. avatar"
-                        width="100"
-                        height="100"
-                        class="card-avatar"
-                        />
-                        <blockquote class="card-quote">
-                        <p>
-                            Thank you so much for your help. Techium company is awesome!
-                            <cite>Dorrie S.</cite>
-                        </p>
+                          </p>
+                          <cite>Yuri Y.</cite>
                         </blockquote>
                     </article>
                     <article class="card-testimonial">
                         <img
-                        src="images/Object.png"
-                        alt="Sven H. avatar"
-                        width="100"
-                        height="100"
+                        src="/Resources/9.png"
+                        alt="Dorrie S. avatar"
+                        width="120"
+                        height="120"
                         class="card-avatar"
                         />
                         <blockquote class="card-quote">
-                        <p>
+                          <p>
+                            Thank you so much for your help. Techium company is awesome!
+                          </p>
+                          <cite>Dorrie S.</cite>
+                        </blockquote>
+                    </article>
+                    <article class="card-testimonial">
+                        <img
+                        src="/Resources/Object.png"
+                        alt="Sven H. avatar"
+                        width="120"
+                        height="120"
+                        class="card-avatar"
+                        />
+                        <blockquote class="card-quote">
+                          <p>
                             I love your system. Definitely worth the investment. I'd be lost without Techium company.
-                            <cite>Sven H.</cite>
-                        </p>
+                          </p>
+                          <cite>Sven H.</cite>
                         </blockquote>
                     </article>
                 </div>
@@ -292,54 +295,56 @@
           </div>
         </section>
     </main>
+    <div class="back-2-top">
+      <button>
+        <a href="#">
+          <i class="fa-solid fa-jet-fighter-up"></i>
+          <!-- MIGHT ADD A COOL PLANE ANIMATION-->
+          <p>To Top</p>
+        </a>
+      </button>
+    </div>
     <footer class="footer" data-section-theme="dark">
       <div class="container">
-        <div class="row">
-          <div class="col-1-2">
-            <img
-              src="images/logo.png"
-              alt="Techium logo"
-              width="160"
-              height="40"
-            />
-            <address class="footer-address">
-              972 Mission St<br />
-              San Francisco, CA<br />
-              94103
-            </address>
-          </div>
-          <div class="col-1-2">
+          <div class="row addrr">
+            <div class="addrr-book">
+              <img
+                src="/HTML/logo.png"
+                alt="Techium logo"
+                width="160"
+                height="40"
+              />
+              <address class="footer-address">
+                972 Mission St<br />
+                San Francisco, CA<br />
+                94103
+              </address>
+            </div>
             <div class="social nav">
                 <a href="https://www.facebook.com" class="social-link">
+                  <i class="fa-brands fa-facebook-f"></i>
                 </a>
                 <a href="https://twitter.com" class="social-link">
+                  <i class="fa-brands fa-twitter"></i>
                 </a>
                 <a href="https://www.instagram.com" class="social-link">
+                  <i class="fa-brands fa-instagram"></i>
                 </a>
-            </ul>
+            </div>
           </div>
-        </div>
-        <hr />
-        <div class="row">
-          <div class="col-1-2">
-            <p class="footer-copyright">
-              © 2021 Techium, made with ♥ by students.
-            </p>
+          <hr />
+          <div class="row">
+            <div class="copyright">
+              <p class="footer-copyright">
+                © 2021 Techium | Designed By Antony Sydney.
+              </p>
+            </div>
+            <div class="footer-nav">
+              <a href="#" class="footer-nav-link">Terms of use</a>
+              <a href="#" class="footer-nav-link">Privacy Policy</a>
+              <a href="#" class="footer-nav-link">Cookie Policy</a>
+            </div>
           </div>
-          <div class="col-1-2">
-            <ul class="footer-nav nav">
-              <li class="footer-nav-item nav-item">
-                <a href="#" class="footer-nav-link">Terms of use</a>
-              </li>
-              <li class="footer-nav-item nav-item">
-                <a href="#" class="footer-nav-link">Privacy Policy</a>
-              </li>
-              <li class="footer-nav-item nav-item">
-                <a href="#" class="footer-nav-link">Cookie Policy</a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
     </footer>
 </body>
