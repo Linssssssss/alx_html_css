@@ -2,16 +2,24 @@
 
 :root{
     font-size: 16px;
+    --color-primary: #d73953;
+    --color-black: #090909;
+    --color-white: #ffffff;
+    --color-grey: #a0a0a0;
+    --color-light-grey: #f3f3f3;
+    --color-dark-grey: #353535;
 }
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     line-height: 1.2;
+    scroll-behavior: smooth;
 }
 html,body{
     width: 100vw;
     min-height: 100vh;
+    background: var(--color-white);
 }
 h1,h2,h3,h4,h5,h6{
     line-height: 1.5;
@@ -27,9 +35,13 @@ header,main,footer{
     all: unset;
     width: fit-content;
     padding: 10px 20px;
-    border: 2px solid black;
+    border: 2px solid var(--color-primary);
+    color: var(--color-white);
     font-size: 1.1em;
     cursor: pointer;
+}
+.button:hover{
+    background: var(--color-primary);
 }
 .row{
     width: 100%;
@@ -42,41 +54,49 @@ li{
 }
 a{
     text-decoration: none;
+    font: inherit;
 }
 
 /*************************** HEADER ***************************/
+header.main{
+    background: var(--color-black);
+    color: var(--color-white);
+    & .container{
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    & .header-logo{
+        width: fit-content;
+        height: fit-content;
+    }
+    & a{
+        width: fit-content;
+        height: fit-content;
+        & img{
+            width: 150px;
+            height: 60px;
+            border: 1px solid black;
+        }
+    }
+}
 
-header>.container{
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.header-logo{
-    width: fit-content;
-    height: fit-content;
-}
-header a{
-    width: fit-content;
-    height: fit-content;
-}
-a img{
-    width: 150px;
-    height: 60px;
-    border: 1px solid black;
-}
 nav{
     width: fit-content;
     height: fit-content;
     padding-right: 10px;
+    & ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 15px;
+    }
+    & a{ 
+        padding-bottom: 10px;
+        color: var(--color-white);
+    }
 }
-nav ul{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 15px;
-}
-nav a{ padding-bottom: 10px;}
 
 /*************************** MAIN ***************************/
 
@@ -102,6 +122,7 @@ section{
 .section-tagline{
     font-size: 1.2em;
     font-weight: 300;
+    color: var(--color-primary);
 }
 
 .section-hero{
@@ -109,9 +130,11 @@ section{
     min-height: 45vh;
     display: flex;
     align-items: center;
+    background: var(--color-black);
+    color: var(--color-white);
     & h2{
         text-align: left;
-        font-weight: 5em !important;
+        font-weight: 7em!important;
     }
     .section-body{
         width: 100%;
@@ -123,59 +146,78 @@ section{
 }
 
 .section-services{
+        min-height: 40vh;
     .section-body{
         display: grid;
         gap: 10px;
-        .row>*{
+        .card-services{
             width: 100%;
-            padding: 15px 10px;
+            padding: 20px 15px;
+            background: var(--color-light-grey);
+            cursor: pointer;
+            & a{
+                color: var(--color-black);
+            }
+        }
+        .card-services:is(:hover){
+            background: var(--color-primary);
+            & a{
+                color: var(--color-white);
+            }
         }
     }
 }
 
 .section-works{
-    min-height: 50vh;
+    background: var(--color-black);
+    .section-title{ color: var(--color-white);}
     .section-body{
-        height: fit-content;
         .row{ 
-            width: 100%;
-            align-items: center;
-            height: fit-content;
+            height:fit-content;
+            gap: 5px;
             .card-work{
-                width: inherit;
-                min-height: 30vh;
-                border: 1px solid red;
-                overflow: hidden;
+                width: 100%;
+                min-height: 50vh;
                 .card-outer{
-                    width: inherit;
+                    width: 100%;
                     height: 100%;
                     position: relative;
                     .card-image{
                         position: absolute;
-                        top: 0;
-                        left: 0;
                         width: 100%;
                         height: 100%;
-                        z-index: 1;
-                        img{
+                        & img{
                             width: 100%;
                             height: 100%;
-                            object-fit: cover;
+                            object-fit: contain;
                             object-position: center;
+                        }
+                        &:is(:hover) img{
+                            object-fit: cover;
                         }
                     }
                     .card-inner{
                         position: absolute;
-                        top: 0;
-                        left: 0;
                         width: 100%;
                         height: 100%;
-                        z-index: 2;
-                        display: grid;
-                        place-items: center;
-                        .card-title{/*CHECK ON THIS*/
+                        z-index: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        .card-title{
+                            display: none;
                             width: fit-content;
-                            height: fit-content;
+                            & a{
+                                color: var(--color-white);
+                            }
+                        }
+                    } 
+                    .card-inner:is(:hover){
+                        --color-black: #090909a9;
+                        background: var(--color-black);
+                        .card-title{
+                            display: contents;
                         }
                     }
                 }
@@ -184,3 +226,211 @@ section{
     }
 }
 
+.section-about-us{
+    .section-body{
+        .row{
+            min-height: 60vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            .img-box{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & img{
+                    width: 100%;
+                    height: 100%;
+                    object-position: center;
+                    object-fit: contain;
+                }
+            }
+            .content{
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-rows: 1fr 1fr 1fr;
+                font-size: 1.1em;
+                & span>h3{
+                    height: 5vh;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    .section-footer{
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & a{
+            color: var(--color-black);
+            font-size: 1.1 em;
+        }
+        &:is(:hover){
+            & a{ color: var(--color-white);}
+        }
+    }
+}
+
+/* ERROR BELLOW */
+.section-latest-news{ 
+    /** Card-blog is overflowwing and unresponsive especially on small devices, check on the code, especially hierachy **/
+    .row{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        .card-blog{
+            width: 100%;
+        }
+    }
+}
+
+/* ERROR BELLOW - on the ::before */
+.section-testimonial{
+    .card-testimonial{
+        min-height: 40vh;
+        display: grid;
+        gap: 10px;
+        place-items: center;
+        align-content: center;
+        text-align: center;
+        & img{
+            width: 6em;
+            height: 6em;
+            border-radius: 50%;
+            box-shadow: 0px 0px 1px #333;
+            cursor: pointer;
+            object-fit: cover;
+            object-position: center;
+        }
+        & blockquote{
+            display: grid;
+            gap: 15px;
+            position: relative;
+            & p{
+                font-size: 1.05em;
+                line-height: 1.5;
+            }
+            & cite{
+                cursor: pointer;
+                font-size: 1.1em;
+                letter-spacing: 1px;
+                color: var(--color-primary);
+            }
+        }
+        & ::before {
+            display: none;
+          content: "\201C";
+          position: absolute;
+          top: -4rem;
+          left: -1rem;
+          color: #30be1d59;
+          font-size: 10rem;
+          z-index: -1;
+        }
+    }
+}
+
+.section-contact{
+    min-height: 30vh;
+    .section-body{
+        p{
+            width: 80%;
+            padding: 20px 10px;
+            margin: 0 auto;
+        }
+    }
+    .section-footer{
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & a{
+            font-size: 1.2 em;
+            color: var(--color-black);
+            &:is(:hover){
+                 color: var(--color-white);
+            }
+        }
+    }
+}
+
+.back-2-top{
+    --color-primary: #d73953e0;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+    & button{
+        all: unset;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--color-primary);
+        padding: 10px;
+        text-align: center;
+        display: grid;
+        place-items: center;
+        text-transform: uppercase;
+        z-index: 10;
+        & a{
+            display: inherit;
+            place-items: center;
+            gap: 10px;
+            color: var(--color-black);
+            & i{
+                font-size: 1.2em;
+            }
+            & p{
+                font-size: 0.85em;
+            }
+        }
+    }
+}
+
+/*************************** FOOTER ***************************/
+
+footer{
+    background: var(--color-black);
+    color: var(--color-white);
+    & .addrr{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        gap: 10px;
+        & .addrr-book{
+            padding: 10px 0px;
+            address{ line-height: 1.5;}
+        }
+        & .social{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 10px;
+            font-size: 1.6em;
+        }
+    }
+    
+    & .row:last-child{
+        align-items: center;
+        text-align: center;
+        padding-top: 10px;
+        & .footer-nav{
+            display: grid;
+            place-items: center;
+            gap: 5px;
+        }
+    }
+    & a{
+        color: var(--color-white);
+        &:is(:hover){
+            color: var(--color-primary);
+        }
+    }
+}
